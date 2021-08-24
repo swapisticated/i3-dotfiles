@@ -169,17 +169,8 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-exec --no-startup-id picom
-exec_always --no-startup-id $HOME/.config/polybar/forest/launch.sh 
-exec --no-startup-id nitrogen --set-auto //home/swapisticated/Pictures/pexel.jpg --head=0
-exec --no-startup-id flameshot
 
-bindsym $mod+r mode "resize"
-bindsym $mod+shift+x exec i3lock-fancy
-bindsym $mod+Tab workspace next
-bindsym $mod+f exec	 nautilus
-bindsym $mod+b exec google-chrome-stable
-bindsym Print exec flameshot gui
+#window colors
 
 set $bg-color 	         #2f343f
 set $inactive-bg-color   #2f343f
@@ -194,14 +185,20 @@ client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-col
 client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #2f343f
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #2f343f
 
+
+
+exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/google-chrome-stable'
+exec --no-startup-id i3-battery-popup -n -D -L 20 -l 10
+exec --no-startup-id picom
+exec_always --no-startup-id $HOME/.config/polybar/forest/launch.sh 
+exec --no-startup-id nitrogen --set-auto //home/swapisticated/Pictures/pexel.jpg --head=0
+exec --no-startup-id flameshot
+
+
 bindsym $mod+Ctrl+Right resize shrink width 1 px or 1 ppt
 bindsym $mod+Ctrl+Up resize grow height 1 px or 1 ppt
 bindsym $mod+Ctrl+Down resize shrink height 1 px or 1 ppt
 bindsym $mod+Ctrl+Left resize grow width 1 px or 1 ppt
-
-exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/google-chrome-stable'
-exec --no-startup-id i3-battery-popup -n -D -L 20 -l 10
-
 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
@@ -211,6 +208,13 @@ bindsym $mod+m exec --no-startup-id ~/.config/rofi/applets/android/screenshot.sh
 bindsym $mod+t exec --no-startup-id ~/.config/rofi/applets/android/quicklinks.sh
 bindsym $mod+p exec --no-startup-id ~/.config/rofi/applets/android/powermenu.sh
 bindsym $mod+n exec --no-startup-id ~/.config/rofi/applets/android/backlight.sh
+bindsym $mod+r mode "resize"
+bindsym $mod+shift+x exec i3lock-fancy
+bindsym $mod+Tab workspace next
+bindsym $mod+f exec	 nautilus
+bindsym $mod+b exec google-chrome-stable
+bindsym Print exec flameshot gui
+
 #gaps
 for_window [class=".*"] border pixel 0
 #gaps inner 10
