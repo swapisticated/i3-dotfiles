@@ -5,8 +5,11 @@ so far my first usable i3 config
 setup breakdown-
 
 i3-gaps
+
 picom ibhagwan git
+
 polybar
+
 rofi
  
 thats it!
