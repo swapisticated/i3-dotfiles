@@ -4,14 +4,19 @@ so far my first usable i3 config
 
 setup breakdown-
 
-i3-gaps
+i3-gaps,
 
-picom ibhagwan git
+picom ibhagwan git,
 
-polybar
+polybar,
 
 rofi
  
+
+
+
 thats it!
+
+
 
 look into the i3 config to change shortcut keybindings or to change the assigned application to your preference.
