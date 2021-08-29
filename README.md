@@ -4,13 +4,13 @@ so far my first usable i3 config
 
 setup breakdown-
 
-i3-gaps,
+1 i3-gaps,
 
-picom ibhagwan git,
+2 picom ibhagwan git,
 
-polybar,
+3 polybar,
 
-rofi
+4 rofi
  
 
 
